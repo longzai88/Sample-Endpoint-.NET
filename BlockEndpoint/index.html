@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                ajax: {
+                    url: '/api/data',
+                    dataSrc: 'Result'
+                },
+                columns: [
+                    { "data": "TransactionHash" },
+                    { "data": "BlockNumber" },
+                    { "data": "TimeStamp" },
+                    { "data": "GasPrice" },
+                    { "data": "GasUsed" }
+                ]
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <table id="example" class="display" style="width:60%">
+        <thead>
+            <tr>
+                <th>TxHash</th>
+                <th>Block</th>
+                <th>TimeStamp</th>
+                <th>Gasprice</th>
+                <th>Gasused</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>TxHash</th>
+                <th>Block</th>
+                <th>TimeStamp</th>
+                <th>Gasprice</th>
+                <th>Gasused</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
